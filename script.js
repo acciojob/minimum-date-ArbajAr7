@@ -1,5 +1,33 @@
 function minDate(dates) {
   //write you code here
+	 var Arraytemp = Array(dates.length).fill(0);
+var temp = "";
+  
+  for(let i = 0; i<dates.length; i++)
+  {
+      for(let j = 0; j<(dates[i].length);j++)
+      {
+          
+          if(dates[i][j]=="/")
+          {
+              continue;
+          }
+          temp += dates[i][j];
+      }
+      Arraytemp[i] = parseInt(temp);
+      temp = "";
+  }
+ let minNumber = Arraytemp[0];
+    let minPosition = 0;
+
+    for (let i = 1; i < Arraytemp.length; i++) {
+        if (Arraytemp[i] < minNumber) {
+            minNumber = Arraytemp[i];
+            minPosition = i;
+        }
+    }
+  return dates[minPosition];
+  
 }
 
 // Do not change the code
